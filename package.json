@@ -1,5 +1,5 @@
 {
-  "name": "suprsend-rn-sdk",
+  "name": "@suprsend/react-native-sdk",
   "version": "0.1.0",
   "description": "Suprsend SDK for React Native Applications",
   "main": "lib/commonjs/index",
@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/sivaram000/suprsend-rn-sdk",
+  "repository": "https://github.com/suprsend/suprsend-rn-sdk",
   "author": "Sivaram Katta <katta.sivaram@suprsend.com> (https://github.com/sivaram000)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sivaram000/suprsend-rn-sdk/issues"
+    "url": "https://github.com/suprsend/suprsend-rn-sdk/issues"
   },
-  "homepage": "https://github.com/sivaram000/suprsend-rn-sdk#readme",
+  "homepage": "https://github.com/suprsend/suprsend-rn-sdk#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
