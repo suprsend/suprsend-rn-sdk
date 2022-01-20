@@ -1,6 +1,6 @@
 {
   "name": "@suprsend/react-native-sdk",
-  "version": "0.1.0",
+  "version": "0.3.2",
   "description": "Suprsend SDK for React Native Applications",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -15,7 +15,10 @@
     "cpp",
     "suprsend-rn-sdk.podspec",
     "!lib/typescript/example",
+    "!android/.idea",
+    "!android/.gradle",
     "!android/build",
+    "!android/local.properties",
     "!ios/build",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -44,7 +47,8 @@
   },
   "homepage": "https://github.com/suprsend/suprsend-rn-sdk#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
