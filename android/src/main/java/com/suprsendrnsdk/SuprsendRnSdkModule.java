@@ -148,60 +148,90 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void setEmail(String email) {
+    if (email == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().setEmail(email);
   }
 
   @ReactMethod
   public void unSetEmail(String email) {
+    if (email == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().unSetEmail(email);
   }
 
   @ReactMethod
   public void setSms(String mobile) {
+    if (mobile == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().setSms(mobile);
   }
 
   @ReactMethod
   public void unSetSms(String mobile) {
+    if (mobile == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().unSetEmail(mobile);
   }
 
   @ReactMethod
   public void setWhatsApp(String mobile) {
+    if (mobile == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().setWhatsApp(mobile);
   }
 
   @ReactMethod
   public void unSetWhatsApp(String mobile) {
+    if (mobile == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().unSetWhatsApp(mobile);
   }
 
   @ReactMethod
   public void setAndroidFcmPush(String token) {
+    if (token == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().setAndroidFcmPush(token);
   }
 
   @ReactMethod
   public void unSetAndroidFcmPush(String token) {
+    if (token == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().unSetAndroidFcmPush(token);
   }
 
   @ReactMethod
   public void setAndroidXiaomiPush(String token) {
+    if (token == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().setAndroidXiaomiPush(token);
   }
 
   @ReactMethod
   public void unSetAndroidXiaomiPush(String token) {
+    if (token == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.getUser().unSetAndroidXiaomiPush(token);
   }
@@ -215,6 +245,9 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void setSuperProperties(ReadableMap properties) {
+    if (properties == null) {
+      return;
+    }
     getInstance();
     JSONObject jsonData = convertMapToJson(properties);
     suprsendInstance.setSuperProperties(jsonData);
@@ -222,6 +255,9 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void unSetSuperProperty(String key) {
+    if (key == null) {
+      return;
+    }
     getInstance();
     suprsendInstance.unSetSuperProperty(key);
   }

@@ -2,30 +2,52 @@ import { NativeModules } from 'react-native';
 
 const SuprsendRnSdk = NativeModules.SuprsendRnSdk;
 
+function constructObject(key: String | Object, value: any): Object {
+  let response: { [key: string]: any } = {};
+  if (typeof key === 'string' && value !== undefined) {
+    response[key] = value;
+  } else if (typeof key === 'object') {
+    response = key;
+  }
+  return response;
+}
+
 const user = {
-  set: function (properties: Object) {
+  set: function (key: string | Object, value: any) {
+    const properties = constructObject(key, value);
     SuprsendRnSdk.set(properties);
   },
 
-  setOnce: function (properties: Object) {
+  setOnce: function (key: string | Object, value: any) {
+    const properties = constructObject(key, value);
     SuprsendRnSdk.setOnce(properties);
   },
 
-  increment: function (properties: { [key: string]: number }) {
+  increment: function (key: string | Object, value: number) {
+    const properties = constructObject(key, value);
     SuprsendRnSdk.increment(properties);
   },
 
-  append: function (properties: Object) {
+  append: function (key: string | Object, value: any) {
+    const properties = constructObject(key, value);
     SuprsendRnSdk.append(properties);
   },
 
-  remove: function (properties: Object) {
+  remove: function (key: string | Object, value: any) {
+    const properties = constructObject(key, value);
     SuprsendRnSdk.remove(properties);
   },
 
   unSet: function (keys: string[]) {
-    SuprsendRnSdk.unSet(keys);
+    let properties: string[] = [];
+    if (typeof keys === 'string') {
+      properties.push(keys);
+    } else if (Array.isArray(keys)) {
+      properties = keys;
+    }
+    SuprsendRnSdk.unSet(properties);
   },
+
   setEmail: function (email: string) {
     SuprsendRnSdk.setEmail(email);
   },
@@ -86,7 +108,8 @@ const Suprsend = {
     SuprsendRnSdk.track(eventName, properties);
   },
 
-  setSuperProperties: function (properties: Object) {
+  setSuperProperties: function (key: string | Object, value: any) {
+    const properties = constructObject(key, value);
     SuprsendRnSdk.setSuperProperties(properties);
   },
 
