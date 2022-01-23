@@ -124,6 +124,10 @@ const Suprsend = {
   reset: function () {
     SuprsendRnSdk.reset();
   },
+
+  showNotification: function (payload: string) {
+    SuprsendRnSdk.showNotification(payload);
+  },
 };
 
 export default Suprsend;

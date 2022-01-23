@@ -22,6 +22,7 @@ import java.util.Map;
 
 import app.suprsend.SSApi;
 import app.suprsend.base.LogLevel;
+import app.suprsend.notification.SSNotificationHelper;
 
 
 @ReactModule(name = SuprsendRnSdkModule.NAME)
@@ -266,6 +267,11 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   public void flush() {
     getInstance();
     suprsendInstance.flush();
+  }
+
+  @ReactMethod
+  public void showNotification(String notificationJSONPayload) {
+    SSNotificationHelper.INSTANCE.showSSNotification(this.context, notificationJSONPayload);
   }
 
   private static JSONObject convertMapToJson(ReadableMap readableMap) {
