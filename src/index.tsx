@@ -12,6 +12,16 @@ function constructObject(key: String | Object, value: any): Object {
   return response;
 }
 
+function constructArray(key: string[] | string, value: any): string[] {
+  let response: string[] = [];
+  if (typeof key === 'string' && value !== undefined) {
+    response.push(key);
+  } else if (Array.isArray(key)) {
+    response = key;
+  }
+  return response;
+}
+
 const user = {
   set: function (key: string | Object, value: any) {
     const properties = constructObject(key, value);
@@ -38,13 +48,8 @@ const user = {
     SuprsendRnSdk.remove(properties);
   },
 
-  unSet: function (keys: string[]) {
-    let properties: string[] = [];
-    if (typeof keys === 'string') {
-      properties.push(keys);
-    } else if (Array.isArray(keys)) {
-      properties = keys;
-    }
+  unSet: function (key: string[] | string, value: any) {
+    const properties = constructArray(key, value);
     SuprsendRnSdk.unSet(properties);
   },
 
@@ -123,6 +128,14 @@ const Suprsend = {
 
   reset: function () {
     SuprsendRnSdk.reset();
+  },
+
+  purchaseMade: function (properties: Object) {
+    SuprsendRnSdk.purchaseMade(properties);
+  },
+
+  initXiaomi: function (appId: string, apiKey: string) {
+    SuprsendRnSdk.initXiaomi(appId, apiKey);
   },
 
   showNotification: function (payload: string) {

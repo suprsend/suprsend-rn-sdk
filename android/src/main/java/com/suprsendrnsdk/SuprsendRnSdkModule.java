@@ -270,6 +270,21 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void purchaseMade(ReadableMap properties) {
+    if (properties == null) {
+      return;
+    }
+    getInstance();
+    JSONObject jsonData = convertMapToJson(properties);
+    suprsendInstance.purchaseMade(jsonData);
+  }
+
+  @ReactMethod
+  public void initXiaomi(String appId, String apiKey) {
+    SSApi.Companion.initXiaomi(this.context, appId, apiKey);
+  }
+
+  @ReactMethod
   public void showNotification(String notificationJSONPayload) {
     SSNotificationHelper.INSTANCE.showSSNotification(this.context, notificationJSONPayload);
   }
