@@ -12,9 +12,9 @@ function constructObject(key: String | Object, value: any): Object {
   return response;
 }
 
-function constructArray(key: string[] | string, value: any): string[] {
+function constructArray(key: string[] | string): string[] {
   let response: string[] = [];
-  if (typeof key === 'string' && value !== undefined) {
+  if (typeof key === 'string') {
     response.push(key);
   } else if (Array.isArray(key)) {
     response = key;
@@ -48,8 +48,8 @@ const user = {
     SuprsendRnSdk.remove(properties);
   },
 
-  unSet: function (key: string[] | string, value: any) {
-    const properties = constructArray(key, value);
+  unSet: function (key: string[] | string) {
+    const properties = constructArray(key);
     SuprsendRnSdk.unSet(properties);
   },
 
