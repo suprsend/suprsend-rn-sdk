@@ -138,8 +138,8 @@ const Suprsend = {
     SuprsendRnSdk.initXiaomi(appId, apiKey);
   },
 
-  showNotification: function (payload: string) {
-    SuprsendRnSdk.showNotification(payload);
+  showNotification: function (payload: { data: { supr_send_n_pl: string } }) {
+    SuprsendRnSdk.showNotification(payload.data.supr_send_n_pl);
   },
 };
 
