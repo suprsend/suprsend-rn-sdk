@@ -58,5 +58,5 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation 'com.github.suprsend:suprsend-kmm-sdk:0.1Beta4'
+    implementation 'com.github.suprsend:suprsend-kmm-sdk:0.1Beta5'
 }
