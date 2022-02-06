@@ -45,7 +45,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
-    SSApi.Companion.init(this);
+    SSApi.Companion.init(this, "kfWdrPL1nFqs7OUihiBn","From1HA1ZiSXs3ofBHXh","https://collector-staging.suprsend.workers.dev");
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager()); // Remove this line if you don't want Flipper enabled

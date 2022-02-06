@@ -30,7 +30,6 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   public static final String NAME = "SuprsendRnSdk";
   private final ReactApplicationContext context;
   private SSApi suprsendInstance;
-  private String apiKey, apiSecret, apiBaseUrl;
 
   public SuprsendRnSdkModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -45,17 +44,8 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
 
   private void getInstance() {
     if (suprsendInstance == null) {
-      suprsendInstance = SSApi.Companion.getInstance(apiKey, apiSecret, apiBaseUrl);
+      suprsendInstance = SSApi.Companion.getInstance();
       suprsendInstance.setLogLevel(LogLevel.VERBOSE);
-    }
-  }
-
-  @ReactMethod
-  public void initializeSDK(String workspaceKey, String workspaceSecret, String apiUrl) {
-    apiKey = workspaceKey;
-    apiSecret = workspaceSecret;
-    if (apiUrl != null) {
-      apiBaseUrl = apiUrl;
     }
   }
 
