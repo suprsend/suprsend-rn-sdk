@@ -2,6 +2,14 @@ import { NativeModules } from 'react-native';
 
 const SuprsendRnSdk = NativeModules.SuprsendRnSdk;
 
+enum LogLevel {
+  VERBOSE,
+  DEBUG,
+  INFO,
+  ERROR,
+  OFF,
+}
+
 function constructObject(key: String | Object, value: any): Object {
   let response: { [key: string]: any } = {};
   if (typeof key === 'string' && value !== undefined) {
@@ -95,16 +103,16 @@ const user = {
 };
 
 const Suprsend = {
-  initializeSDK: function (
-    workspace_key: string,
-    workspace_secret: string,
-    base_url?: string
-  ) {
-    SuprsendRnSdk.initializeSDK(workspace_key, workspace_secret, base_url);
+  initXiaomi: function (appId: string, apiKey: string) {
+    SuprsendRnSdk.initXiaomi(appId, apiKey);
   },
 
   identify: function (unique_id: any) {
     SuprsendRnSdk.identify(unique_id);
+  },
+
+  setLogLevel: function (LogType: LogLevel) {
+    SuprsendRnSdk.setLogLevel(LogLevel[LogType]);
   },
 
   user: user,
@@ -132,10 +140,6 @@ const Suprsend = {
 
   purchaseMade: function (properties: Object) {
     SuprsendRnSdk.purchaseMade(properties);
-  },
-
-  initXiaomi: function (appId: string, apiKey: string) {
-    SuprsendRnSdk.initXiaomi(appId, apiKey);
   },
 
   showNotification: function (payload: { data: { supr_send_n_pl: string } }) {

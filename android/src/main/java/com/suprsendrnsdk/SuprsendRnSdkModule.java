@@ -30,6 +30,7 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   public static final String NAME = "SuprsendRnSdk";
   private final ReactApplicationContext context;
   private SSApi suprsendInstance;
+  private LogLevel[] LogsList = LogLevel.values();
 
   public SuprsendRnSdkModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -45,8 +46,13 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   private void getInstance() {
     if (suprsendInstance == null) {
       suprsendInstance = SSApi.Companion.getInstance();
-      suprsendInstance.setLogLevel(LogLevel.VERBOSE);
     }
+  }
+
+  @ReactMethod
+  public void setLogLevel(Integer logInteger) {
+    getInstance();
+    suprsendInstance.setLogLevel(LogsList[logInteger]);
   }
 
   @ReactMethod

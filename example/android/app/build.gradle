@@ -119,6 +119,9 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -133,6 +136,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        buildConfigField "String", "SS_API_KEY", localProperties['SS_API_KEY']
+        buildConfigField "String", "SS_API_SECRET", localProperties['SS_API_SECRET']
+        buildConfigField "String", "SS_API_BASE_URL", localProperties['SS_API_BASE_URL']
     }
     splits {
         abi {
