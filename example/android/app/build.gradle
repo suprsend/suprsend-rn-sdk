@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'  // Add this for FCM Android Push
 
 import com.android.build.OutputFile
 
@@ -188,7 +189,8 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation 'com.github.suprsend:suprsend-kmm-sdk:0.1Beta8'
+    implementation 'com.github.suprsend:suprsend-kmm-sdk:0.1Beta9' // Add this line
+    implementation("com.google.firebase:firebase-messaging:22.0.0") // Add this for FCM Android Push
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {

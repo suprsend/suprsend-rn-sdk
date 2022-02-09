@@ -11,7 +11,7 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.suprsendrnsdk.SuprsendRnSdkPackage;
-import app.suprsend.SSApi;
+import app.suprsend.SSApi; // Add this
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -45,7 +45,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
-    SSApi.Companion.init(this, BuildConfig.SS_API_KEY, BuildConfig.SS_API_SECRET, BuildConfig.SS_API_BASE_URL);
+    SSApi.Companion.init(this, BuildConfig.SS_API_KEY, BuildConfig.SS_API_SECRET); // Add this and replace params with your values
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager()); // Remove this line if you don't want Flipper enabled
