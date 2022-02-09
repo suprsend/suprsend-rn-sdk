@@ -31,7 +31,9 @@ dependencies {
 ## Initialisation
 Initialise the android sdk in MainApplication.java inside onCreate method and just above super.onCreate() line. You can find workspace_key and workspace_secret in dashboard.
 ```java
-SSApi.Companion.init(this, workspace_key, workspace_secret);
+import app.suprsend.SSApi; // import sdk
+...
+SSApi.Companion.init(this, workspace_key, workspace_secret); // inside onCreate method just above super.onCreate() line
 ```
 NOTE: If you face any issue in installation or integration please refer the [example folder](https://github.com/suprsend/suprsend-rn-sdk/tree/main/example) in respository where you can find the integration of sdk in example application.
 
