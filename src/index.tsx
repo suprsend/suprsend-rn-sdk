@@ -143,7 +143,9 @@ const Suprsend = {
   },
 
   showNotification: function (payload: { data: { supr_send_n_pl: string } }) {
-    SuprsendRnSdk.showNotification(payload.data.supr_send_n_pl);
+    if (payload?.data?.supr_send_n_pl) {
+      SuprsendRnSdk.showNotification(payload.data.supr_send_n_pl);
+    }
   },
 };
 
