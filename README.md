@@ -24,7 +24,7 @@ Add following line of code inside dependencies in app build.gradle
 ```java
 dependencies {
             ...
-            implementation 'com.github.suprsend:suprsend-kmm-sdk:0.1Beta8'
+            implementation 'com.github.suprsend:suprsend-kmm-sdk:0.1Beta9'
     }
 ```
 
