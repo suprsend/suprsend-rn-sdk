@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, NativeModules } from 'react-native';
 import Suprsend from '@suprsend/react-native-sdk';
 
 export default function App() {
+  const SuprsendData = NativeModules.SuprsendRnSdk;
   return (
     <View style={styles.container}>
       <Text>Welcome to Suprsend SDK</Text>
       <Button
         title="Init"
-        onPress={() => {
-          Suprsend.track('age');
+        onPress={async () => {
+          SuprsendData.increment();
         }}
       />
     </View>

@@ -10,6 +10,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <SuprSendSdk/SuprSendSdk-Swift.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -48,6 +49,12 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@"kfWdrPL1nFqs7OUihiBn" secret:@"From1HA1ZiSXs3ofBHXh"];
+  [SuprSend.shared configureWithConfiguration:configuration launchOptions:launchOptions];
+  [SuprSend.shared enableLogging];
+  [SuprSend.shared registerForPushNotifications];
+  
   return YES;
 }
 
