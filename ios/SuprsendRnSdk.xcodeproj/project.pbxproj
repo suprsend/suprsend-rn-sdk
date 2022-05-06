@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		604ECD1E280317BF00517598 /* SuprsendRnSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604ECD1D280317BF00517598 /* SuprsendRnSdk.swift */; };
-		6076917928086290001C5D56 /* SuprSendSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 6076917828086290001C5D56 /* SuprSendSdk */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6076917928086290001C5D56 /* SuprSendSdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +83,6 @@
 			);
 			name = SuprsendRnSdk;
 			packageProductDependencies = (
-				6076917828086290001C5D56 /* SuprSendSdk */,
 			);
 			productName = RCTDataManager;
 			productReference = 134814201AA4EA6300B7C361 /* libSuprsendRnSdk.a */;
@@ -116,7 +113,6 @@
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
 			packageReferences = (
-				6076917728086290001C5D56 /* XCRemoteSwiftPackageReference "SuprSend-iOS-SDK" */,
 			);
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
@@ -248,11 +244,7 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SuprsendRnSdk;
@@ -273,11 +265,7 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SuprsendRnSdk;
@@ -309,25 +297,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6076917728086290001C5D56 /* XCRemoteSwiftPackageReference "SuprSend-iOS-SDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/suprsend/SuprSend-iOS-SDK";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6076917828086290001C5D56 /* SuprSendSdk */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6076917728086290001C5D56 /* XCRemoteSwiftPackageReference "SuprSend-iOS-SDK" */;
-			productName = SuprSendSdk;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58B511D31A9E6C8500147676 /* Project object */;
 }

@@ -19,9 +19,6 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - Mixpanel-swift (3.2.0):
-    - Mixpanel-swift/Complete (= 3.2.0)
-  - Mixpanel-swift/Complete (3.2.0)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -249,8 +246,11 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - suprsend-rn-sdk (0.3.13):
-    - Mixpanel-swift
     - React-Core
+    - SuprsendCore
+    - SuprSendSdk
+  - SuprsendCore (1.0.0)
+  - SuprSendSdk (1.0.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -282,12 +282,15 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - suprsend-rn-sdk (from `../..`)
+  - SuprsendCore
+  - SuprSendSdk
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
-    - Mixpanel-swift
+    - SuprsendCore
+    - SuprSendSdk
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -352,7 +355,6 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
-  Mixpanel-swift: 7c0b15c3ea96a997a989737612a3e62e72c1c561
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -373,9 +375,11 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
-  suprsend-rn-sdk: 177b7a3e71f9a73f1a08d25774f67364706cbd9f
+  suprsend-rn-sdk: 43cd3d9e904f3f1e6da64ab7e62179630c8a450d
+  SuprsendCore: 810cd4e9f7e829c1d694aa556774a3dd787607e8
+  SuprSendSdk: aa988cb0547c46d0d32ba25d2feb404f590cee41
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: d4e606697d5107d18981e2b87c17a134d722552d
+PODFILE CHECKSUM: 4f81e24172b0a76afcc13c17d8eadb4d5e38e6d4
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

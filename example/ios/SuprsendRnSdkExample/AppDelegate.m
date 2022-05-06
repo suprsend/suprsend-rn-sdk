@@ -50,9 +50,9 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
-  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@"kfWdrPL1nFqs7OUihiBn" secret:@"From1HA1ZiSXs3ofBHXh"];
+  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@"kfWdrPL1nFqs7OUihiBn" secret:@"From1HA1ZiSXs3ofBHXh" baseUrl:@"https://collector-staging.suprsend.workers.dev"];
   [SuprSend.shared configureWithConfiguration:configuration launchOptions:launchOptions];
-  [SuprSend.shared enableLogging];
+//  [SuprSend.shared enableLogging];
   [SuprSend.shared registerForPushNotifications];
   
   return YES;
@@ -65,6 +65,29 @@ static void InitializeFlipper(UIApplication *application) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  NSLog(@"deviceToken: %@", deviceToken);
+  NSString * token = [NSString stringWithFormat:@"%@", deviceToken];
+  //Format token as you need:
+  token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+  token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+  token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+  [SuprSend.shared setPushNotificationTokenWithToken:token];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+  if ([notification isSuperSendNotification]) {
+    [SuprSend.shared userNotificationCenter:center willPresent:notification];
+  }
+}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+  if ([response isSuprSendNotification]) {
+    [SuprSend.shared userNotificationCenter:center didReceive:response];
+  }
 }
 
 @end

@@ -1,4 +1,4 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
 const SuprsendRnSdk = NativeModules.SuprsendRnSdk;
 
@@ -9,6 +9,8 @@ enum LogLevel {
   ERROR,
   OFF,
 }
+
+const is_android = Platform.OS === 'android';
 
 function constructObject(key: String | Object, value: any): Object {
   let response: { [key: string]: any } = {};
@@ -43,7 +45,9 @@ const user = {
 
   increment: function (key: string | Object, value: number) {
     const properties = constructObject(key, value);
-    SuprsendRnSdk.increment(properties);
+    if (is_android) {
+      SuprsendRnSdk.increment(properties);
+    }
   },
 
   append: function (key: string | Object, value: any) {
@@ -112,13 +116,17 @@ const Suprsend = {
   },
 
   setLogLevel: function (LogType: LogLevel) {
-    SuprsendRnSdk.setLogLevel(LogLevel[LogType]);
+    if (is_android) {
+      SuprsendRnSdk.setLogLevel(LogLevel[LogType]);
+    } else {
+      SuprsendRnSdk.enableLogging();
+    }
   },
 
   user: user,
 
   track: function (eventName: string, properties?: Object) {
-    SuprsendRnSdk.track(eventName, properties);
+    SuprsendRnSdk.track(eventName, properties || {});
   },
 
   setSuperProperties: function (key: string | Object, value: any) {
