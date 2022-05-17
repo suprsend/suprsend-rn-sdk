@@ -8,12 +8,8 @@ export default function App() {
       <Text>Welcome to Suprsend SDK</Text>
       <Button
         title="Init"
-        onPress={async () => {
-          // Suprsend.setSuperProperties('age', 22);
-          // Suprsend.identify('katta.sivaram@suprsend.com');
-          // Suprsend.track('testing_event');
-          Suprsend.reset();
-          Suprsend.track('testing_event');
+        onPress={() => {
+          Suprsend.track('testing_event', { name: 'mike' });
         }}
       />
     </View>

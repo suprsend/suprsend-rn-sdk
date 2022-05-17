@@ -67,27 +67,37 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 }
 
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   NSLog(@"deviceToken: %@", deviceToken);
-  NSString * token = [NSString stringWithFormat:@"%@", deviceToken];
-  //Format token as you need:
-  token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
-  token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
-  token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
-  [SuprSend.shared setPushNotificationTokenWithToken:token];
+  NSUInteger dataLength = deviceToken.length;
+    if (dataLength == 0) {
+      return;
+    }
+    const unsigned char *dataBuffer = (const unsigned char *)deviceToken.bytes;
+    NSMutableString *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    for (int i = 0; i < dataLength; ++i) {
+      [hexString appendFormat:@"%02x", dataBuffer[i]];
+    }
+  [SuprSend.shared setPushNotificationTokenWithToken:hexString];
 }
 
-//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-//  if ([notification isSuperSendNotification]) {
-//    [SuprSend.shared userNotificationCenter:center willPresent:notification];
-//  }
-//}
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+      if (@available(iOS 14.0, *)) {
+        completionHandler(UNAuthorizationOptionSound | UNNotificationPresentationOptionBanner | UNAuthorizationOptionBadge);
+      } else {
+        completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+      }
+}
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler API_AVAILABLE(ios(7.0)){
+      [SuprSend.shared application:application didReceiveRemoteNotification:userInfo];
+}
 
-//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
-//  if ([response isSuprSendNotification]) {
-//    [SuprSend.shared userNotificationCenter:center didReceive:response];
-//  }
-//}
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+ if ([response isSuprSendNotification]) {
+   [SuprSend.shared userNotificationCenter:center didReceive:response];
+ }
+}
 
 @end
