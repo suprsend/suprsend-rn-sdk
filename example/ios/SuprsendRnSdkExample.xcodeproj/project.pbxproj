@@ -11,13 +11,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2648569E2747C1519B06CADF /* Pods_SuprsendRnSdkExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E55F50B7133E0E314E771C6 /* Pods_SuprsendRnSdkExample.framework */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* SuprsendRnSdkExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SuprsendRnSdkExampleTests.m */; };
 		604ECD212803189A00517598 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604ECD202803189A00517598 /* Example.swift */; };
 		60576508281818250068907D /* SuprSendSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609ECC522815CA6B00B705F3 /* SuprSendSdk.xcframework */; };
+		66216175E41EC2753B3ED78C /* Pods_SuprsendRnSdkExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745BDD94CC95A6FCDC1B595D /* Pods_SuprsendRnSdkExample.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		604ECD202803189A00517598 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		609ECC522815CA6B00B705F3 /* SuprSendSdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SuprSendSdk.xcframework; path = Pods/SuprSendSdk/SuprSendSdk.xcframework; sourceTree = "<group>"; };
 		60CD75DA28046E4B00DFD904 /* SuprsendRnSdkExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SuprsendRnSdkExample.entitlements; path = SuprsendRnSdkExample/SuprsendRnSdkExample.entitlements; sourceTree = "<group>"; };
-		6E55F50B7133E0E314E771C6 /* Pods_SuprsendRnSdkExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuprsendRnSdkExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		745BDD94CC95A6FCDC1B595D /* Pods_SuprsendRnSdkExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuprsendRnSdkExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SuprsendRnSdkExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E00ACF0FDA8BF921659E2F9A /* Pods-SuprsendRnSdkExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuprsendRnSdkExample.release.xcconfig"; path = "Target Support Files/Pods-SuprsendRnSdkExample/Pods-SuprsendRnSdkExample.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -76,7 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60576508281818250068907D /* SuprSendSdk.xcframework in Frameworks */,
-				2648569E2747C1519B06CADF /* Pods_SuprsendRnSdkExample.framework in Frameworks */,
+				66216175E41EC2753B3ED78C /* Pods_SuprsendRnSdkExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 				609ECC522815CA6B00B705F3 /* SuprSendSdk.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				6E55F50B7133E0E314E771C6 /* Pods_SuprsendRnSdkExample.framework */,
+				745BDD94CC95A6FCDC1B595D /* Pods_SuprsendRnSdkExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -406,6 +406,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework",
 				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
 				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/React-Core/React.framework",
 				"${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework",
 				"${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework",
@@ -433,6 +434,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBReactNativeSpec.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreModules.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTAnimation.framework",

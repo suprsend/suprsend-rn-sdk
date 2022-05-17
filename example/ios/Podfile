@@ -5,11 +5,12 @@ platform :ios, '13.0'
 
 target 'SuprsendRnSdkExample' do
   config = use_native_modules!
-  use_frameworks!
+ use_frameworks!
 
   use_react_native!(:path => config["reactNativePath"])
 
   pod 'suprsend-rn-sdk', :path => '../..'
+  pod 'Reachability'
 
   # Enables Flipper.
   #

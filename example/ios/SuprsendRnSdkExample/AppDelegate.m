@@ -77,17 +77,17 @@ static void InitializeFlipper(UIApplication *application) {
   [SuprSend.shared setPushNotificationTokenWithToken:token];
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-  if ([notification isSuperSendNotification]) {
-    [SuprSend.shared userNotificationCenter:center willPresent:notification];
-  }
-}
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+//  if ([notification isSuperSendNotification]) {
+//    [SuprSend.shared userNotificationCenter:center willPresent:notification];
+//  }
+//}
 
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
-  if ([response isSuprSendNotification]) {
-    [SuprSend.shared userNotificationCenter:center didReceive:response];
-  }
-}
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+//  if ([response isSuprSendNotification]) {
+//    [SuprSend.shared userNotificationCenter:center didReceive:response];
+//  }
+//}
 
 @end
