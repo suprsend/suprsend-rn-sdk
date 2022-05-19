@@ -10,7 +10,8 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <SuprSendSdk/SuprSendSdk-Swift.h>
+#import <UserNotifications/UserNotifications.h> // Add this
+#import <SuprSendSdk/SuprSendSdk-Swift.h> // Add this
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -50,10 +51,12 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
+  
+  //  suprsend initialization code
   SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@"kfWdrPL1nFqs7OUihiBn" secret:@"From1HA1ZiSXs3ofBHXh" baseUrl:@"https://collector-staging.suprsend.workers.dev"];
   [SuprSend.shared configureWithConfiguration:configuration launchOptions:launchOptions];
-//  [SuprSend.shared enableLogging];
   [SuprSend.shared registerForPushNotifications];
+  
   
   return YES;
 }
@@ -68,8 +71,9 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 
+// suprsend code block from below for iOS push related events
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  NSLog(@"deviceToken: %@", deviceToken);
   NSUInteger dataLength = deviceToken.length;
     if (dataLength == 0) {
       return;
@@ -99,5 +103,7 @@ static void InitializeFlipper(UIApplication *application) {
    [SuprSend.shared userNotificationCenter:center didReceive:response];
  }
 }
+
+// suprsend code  block ends
 
 @end
