@@ -90,25 +90,35 @@ const user = {
   },
 
   setAndroidFcmPush: function (token: string) {
-    SuprsendRnSdk.setAndroidFcmPush(token);
+    if (is_android) {
+      SuprsendRnSdk.setAndroidFcmPush(token);
+    }
   },
 
   unSetAndroidFcmPush: function (token: string) {
-    SuprsendRnSdk.unSetAndroidFcmPush(token);
+    if (is_android) {
+      SuprsendRnSdk.unSetAndroidFcmPush(token);
+    }
   },
 
   setAndroidXiaomiPush: function (token: string) {
-    SuprsendRnSdk.setAndroidXiaomiPush(token);
+    if (is_android) {
+      SuprsendRnSdk.setAndroidXiaomiPush(token);
+    }
   },
 
   unSetAndroidXiaomiPush: function (token: string) {
-    SuprsendRnSdk.unSetAndroidXiaomiPush(token);
+    if (is_android) {
+      SuprsendRnSdk.unSetAndroidXiaomiPush(token);
+    }
   },
 };
 
 const Suprsend = {
   initXiaomi: function (appId: string, apiKey: string) {
-    SuprsendRnSdk.initXiaomi(appId, apiKey);
+    if (is_android) {
+      SuprsendRnSdk.initXiaomi(appId, apiKey);
+    }
   },
 
   identify: function (unique_id: any) {
@@ -151,7 +161,7 @@ const Suprsend = {
   },
 
   showNotification: function (payload: { data: { supr_send_n_pl: string } }) {
-    if (payload?.data?.supr_send_n_pl) {
+    if (is_android && payload?.data?.supr_send_n_pl) {
       SuprsendRnSdk.showNotification(payload.data.supr_send_n_pl);
     }
   },
