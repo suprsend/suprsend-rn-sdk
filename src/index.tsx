@@ -1,4 +1,4 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
 const SuprsendRnSdk = NativeModules.SuprsendRnSdk;
 
@@ -9,6 +9,8 @@ enum LogLevel {
   ERROR,
   OFF,
 }
+
+const is_android = Platform.OS === 'android';
 
 function constructObject(key: String | Object, value: any): Object {
   let response: { [key: string]: any } = {};
@@ -43,7 +45,9 @@ const user = {
 
   increment: function (key: string | Object, value: number) {
     const properties = constructObject(key, value);
-    SuprsendRnSdk.increment(properties);
+    if (is_android) {
+      SuprsendRnSdk.increment(properties);
+    }
   },
 
   append: function (key: string | Object, value: any) {
@@ -86,25 +90,35 @@ const user = {
   },
 
   setAndroidFcmPush: function (token: string) {
-    SuprsendRnSdk.setAndroidFcmPush(token);
+    if (is_android) {
+      SuprsendRnSdk.setAndroidFcmPush(token);
+    }
   },
 
   unSetAndroidFcmPush: function (token: string) {
-    SuprsendRnSdk.unSetAndroidFcmPush(token);
+    if (is_android) {
+      SuprsendRnSdk.unSetAndroidFcmPush(token);
+    }
   },
 
   setAndroidXiaomiPush: function (token: string) {
-    SuprsendRnSdk.setAndroidXiaomiPush(token);
+    if (is_android) {
+      SuprsendRnSdk.setAndroidXiaomiPush(token);
+    }
   },
 
   unSetAndroidXiaomiPush: function (token: string) {
-    SuprsendRnSdk.unSetAndroidXiaomiPush(token);
+    if (is_android) {
+      SuprsendRnSdk.unSetAndroidXiaomiPush(token);
+    }
   },
 };
 
 const Suprsend = {
   initXiaomi: function (appId: string, apiKey: string) {
-    SuprsendRnSdk.initXiaomi(appId, apiKey);
+    if (is_android) {
+      SuprsendRnSdk.initXiaomi(appId, apiKey);
+    }
   },
 
   identify: function (unique_id: any) {
@@ -112,13 +126,17 @@ const Suprsend = {
   },
 
   setLogLevel: function (LogType: LogLevel) {
-    SuprsendRnSdk.setLogLevel(LogLevel[LogType]);
+    if (is_android) {
+      SuprsendRnSdk.setLogLevel(LogLevel[LogType]);
+    } else {
+      SuprsendRnSdk.enableLogging();
+    }
   },
 
   user: user,
 
   track: function (eventName: string, properties?: Object) {
-    SuprsendRnSdk.track(eventName, properties);
+    SuprsendRnSdk.track(eventName, properties || {});
   },
 
   setSuperProperties: function (key: string | Object, value: any) {
@@ -143,7 +161,7 @@ const Suprsend = {
   },
 
   showNotification: function (payload: { data: { supr_send_n_pl: string } }) {
-    if (payload?.data?.supr_send_n_pl) {
+    if (is_android && payload?.data?.supr_send_n_pl) {
       SuprsendRnSdk.showNotification(payload.data.supr_send_n_pl);
     }
   },

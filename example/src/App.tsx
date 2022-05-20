@@ -9,7 +9,7 @@ export default function App() {
       <Button
         title="Init"
         onPress={() => {
-          Suprsend.track('age');
+          Suprsend.track('testing_event', { name: 'mike' });
         }}
       />
     </View>

@@ -34,8 +34,8 @@ allprojects {
         }
 
         google()
-        mavenCentral()
+        mavenCentral() // Add this if not present
         jcenter()
-        maven { url 'https://www.jitpack.io' } // Add this if not present
+        maven { url 'https://www.jitpack.io' } 
     }
 }
