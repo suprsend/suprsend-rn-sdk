@@ -25,7 +25,6 @@ PODS:
     - Folly (= 2020.01.13.00)
     - RCTRequired (= 0.63.4)
     - React-Core (= 0.63.4)
-  - Reachability (3.2)
   - React (0.63.4):
     - React-Core (= 0.63.4)
     - React-Core/DevSupport (= 0.63.4)
@@ -246,10 +245,10 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
-  - suprsend-rn-sdk (0.3.13):
+  - suprsend-rn-sdk (0.3.14):
     - React-Core
-    - SuprsendCore
-    - SuprSendSdk
+    - SuprsendCore (= 1.0.0)
+    - SuprSendSdk (= 1.0.0)
   - SuprsendCore (1.0.0)
   - SuprSendSdk (1.0.0)
   - Yoga (1.14.0)
@@ -262,7 +261,6 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
-  - Reachability
   - React (from `../node_modules/react-native/`)
   - React-callinvoker (from `../node_modules/react-native/ReactCommon/callinvoker`)
   - React-Core (from `../node_modules/react-native/`)
@@ -289,7 +287,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
-    - Reachability
     - SuprsendCore
     - SuprSendSdk
 
@@ -358,7 +355,6 @@ SPEC CHECKSUMS:
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
   React-callinvoker: c3f44dd3cb195b6aa46621fff95ded79d59043fe
   React-Core: d3b2a1ac9a2c13c3bcde712d9281fc1c8a5b315b
@@ -377,11 +373,11 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
-  suprsend-rn-sdk: 43cd3d9e904f3f1e6da64ab7e62179630c8a450d
+  suprsend-rn-sdk: 31a9738813a44a950ef990330706d646dc83d8d5
   SuprsendCore: 810cd4e9f7e829c1d694aa556774a3dd787607e8
   SuprSendSdk: aa988cb0547c46d0d32ba25d2feb404f590cee41
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: fefaca894528ba49b9c6f41f8f37fa7b306e7ff6
+PODFILE CHECKSUM: f27b939443460cb623e928e3d4a4307c5b8053cb
 
 COCOAPODS: 1.11.3

@@ -6,10 +6,3 @@
 //
 
 import Foundation
-
-public class GreetPeople:NSObject{
-  @objc
-  func greetMe(){
-    print("Hello mike")
-  }
-}
