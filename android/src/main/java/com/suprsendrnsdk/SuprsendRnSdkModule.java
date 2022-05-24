@@ -237,7 +237,11 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   public void track(String eventName, ReadableMap properties) {
     getInstance();
     JSONObject formattedProperties = convertMapToJson(properties);
-    suprsendInstance.track(eventName, formattedProperties);
+    if (formattedProperties.length() > 0) {
+      suprsendInstance.track(eventName, formattedProperties);
+    } else {
+      suprsendInstance.track(eventName, null);
+    }
   }
 
   @ReactMethod
