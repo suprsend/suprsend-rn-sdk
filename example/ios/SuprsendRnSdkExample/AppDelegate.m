@@ -53,7 +53,7 @@ static void InitializeFlipper(UIApplication *application) {
   
   
   //  suprsend initialization code
-  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@"<your_workspace_key>" secret:@"<your_workspace_secret>"];
+  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@"<your_workspace_key>" secret:@"<your_workspace_secret>" baseUrl:nil];
   [SuprSend.shared configureWithConfiguration:configuration launchOptions:launchOptions];
   [SuprSend.shared registerForPushNotifications];
   
