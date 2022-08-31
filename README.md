@@ -78,6 +78,9 @@ SuprSend sdk needs iOS platform version of 13 or above, so check it inside PodFi
 platform :ios, '13.0' // this version has to be 13 or greater
 ```
 
+#### Step 4. Change iOS Deployment Target
+SuprSend sdk needs an iOS deployment target of 11 or above. So Change it in xcode.
+
 ### 2. Initialization
 
 #### Step 1. In AppDelegate.m add the below mentioned code inside *didFinishLaunchingWithOptions* method,  just before returning YES like in code below. 
