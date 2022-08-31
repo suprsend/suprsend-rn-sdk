@@ -34,7 +34,7 @@ Add following line of code inside dependencies in app build.gradle
 ```java
 dependencies {
             ...
-            implementation 'com.suprsend:android:0.1Beta10'
+            implementation 'com.suprsend:rn:0.1.7'
     }
 ```
 
@@ -90,7 +90,7 @@ platform :ios, '13.0' // this version has to be 13 or greater
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   ...
-  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@workspace_key secret:@workspace_secret]; // add this line
+  SuprSendSDKConfiguration* configuration = [[SuprSendSDKConfiguration alloc] initWithKey:@workspace_key secret:@workspace_secret baseUrl:nil]; // add this line
   [SuprSend.shared configureWithConfiguration:configuration launchOptions:launchOptions]; // add this line
   return YES;
 ```
