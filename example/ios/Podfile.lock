@@ -245,7 +245,7 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
-  - suprsend-rn-sdk (0.3.14):
+  - suprsend-rn-sdk (0.4.0):
     - React-Core
     - SuprsendCore (= 1.0.0)
     - SuprSendSdk (= 1.0.0)
@@ -373,11 +373,11 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
-  suprsend-rn-sdk: 31a9738813a44a950ef990330706d646dc83d8d5
+  suprsend-rn-sdk: 310276844b064358ac21106da1d0b320a148c5dc
   SuprsendCore: 810cd4e9f7e829c1d694aa556774a3dd787607e8
   SuprSendSdk: aa988cb0547c46d0d32ba25d2feb404f590cee41
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: f27b939443460cb623e928e3d4a4307c5b8053cb
+PODFILE CHECKSUM: d1ef9be9a05f63c8af2b69a76c24d413aed0592a
 
 COCOAPODS: 1.11.3
