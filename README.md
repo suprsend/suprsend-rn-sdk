@@ -34,7 +34,7 @@ Add following line of code inside dependencies in app build.gradle
 ```java
 dependencies {
             ...
-            implementation 'com.suprsend:rn:0.1.7'
+            implementation 'com.suprsend:rn:0.1.8'
     }
 ```
 
