@@ -240,7 +240,7 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
     if (formattedProperties.length() > 0) {
       suprsendInstance.track(eventName, formattedProperties);
     } else {
-      suprsendInstance.track(eventName, null);
+      suprsendInstance.track(eventName);
     }
   }
 
