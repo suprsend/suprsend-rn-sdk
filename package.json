@@ -33,7 +33,7 @@
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods",
-    "publish_sdk": "yarn prepare && yarn publish"
+    "publish_sdk": "yarn prepare && npm publish"
   },
   "keywords": [
     "react-native",
