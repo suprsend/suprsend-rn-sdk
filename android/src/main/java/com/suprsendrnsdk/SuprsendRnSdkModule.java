@@ -138,9 +138,9 @@ public class SuprsendRnSdkModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void reset() {
+  public void reset(Boolean unSubscribeNotification) {
     getInstance();
-    suprsendInstance.reset();
+    suprsendInstance.reset(unSubscribeNotification);
   }
 
   @ReactMethod
