@@ -58,5 +58,5 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation 'com.suprsend:rn:0.1.8'
+    implementation 'com.suprsend:rn:0.1.10'
 }

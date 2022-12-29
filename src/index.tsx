@@ -1,4 +1,4 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules, Platform, PermissionsAndroid } from 'react-native';
 
 const SuprsendRnSdk = NativeModules.SuprsendRnSdk;
 
@@ -152,8 +152,9 @@ const Suprsend = {
     SuprsendRnSdk.flush();
   },
 
-  reset: function () {
-    SuprsendRnSdk.reset();
+  reset: function (options?: { unsubscribe_push?: boolean }) {
+    const unsubscribe_push = options?.unsubscribe_push ?? true;
+    SuprsendRnSdk.reset(unsubscribe_push);
   },
 
   purchaseMade: function (properties: Object) {
@@ -163,6 +164,19 @@ const Suprsend = {
   showNotification: function (payload: { data: { supr_send_n_pl: string } }) {
     if (is_android && payload?.data?.supr_send_n_pl) {
       SuprsendRnSdk.showNotification(payload.data.supr_send_n_pl);
+    }
+  },
+
+  askNotificationPermission: function () {
+    if (is_android) {
+      try {
+        const granted = PermissionsAndroid.request(
+          'android.permission.POST_NOTIFICATIONS'
+        );
+        return granted;
+      } catch (err) {
+        console.warn(err);
+      }
     }
   },
 };
