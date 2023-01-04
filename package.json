@@ -1,6 +1,6 @@
 {
   "name": "@suprsend/react-native-sdk",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Suprsend SDK for React Native Applications",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -33,7 +33,7 @@
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods",
-    "publish_sdk": "yarn prepare && yarn publish"
+    "publish_sdk": "yarn prepare && npm publish"
   },
   "keywords": [
     "react-native",
