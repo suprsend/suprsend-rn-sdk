@@ -2,7 +2,7 @@ import { NativeModules, Platform, PermissionsAndroid } from 'react-native';
 
 const SuprsendRnSdk = NativeModules.SuprsendRnSdk;
 
-enum LogLevel {
+export enum LogLevel {
   VERBOSE,
   DEBUG,
   INFO,
@@ -125,9 +125,18 @@ const Suprsend = {
     SuprsendRnSdk.identify(unique_id);
   },
 
+  // this method is deprecated
   setLogLevel: function (LogType: LogLevel) {
     if (is_android) {
       SuprsendRnSdk.setLogLevel(LogLevel[LogType]);
+    } else {
+      SuprsendRnSdk.enableLogging();
+    }
+  },
+
+  enableLogging: function (LogType?: LogLevel) {
+    if (is_android) {
+      SuprsendRnSdk.setLogLevel(LogType || LogLevel.DEBUG);
     } else {
       SuprsendRnSdk.enableLogging();
     }
