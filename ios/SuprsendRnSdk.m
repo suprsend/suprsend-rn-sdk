@@ -5,7 +5,7 @@
 
 RCT_EXTERN_METHOD(identify:(NSString *)uniqueId)
 
-RCT_EXTERN_METHOD(reset)
+RCT_EXTERN_METHOD(reset:(BOOL *)unsubscribeNotification)
 
 RCT_EXTERN_METHOD(track:(NSString *)eventName properties:(NSDictionary *)properties)
 
