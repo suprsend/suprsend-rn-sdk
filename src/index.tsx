@@ -163,11 +163,7 @@ const Suprsend = {
 
   reset: function (options?: { unsubscribe_push?: boolean }) {
     const unsubscribe_push = options?.unsubscribe_push ?? true;
-    if (is_android) {
-      SuprsendRnSdk.reset(unsubscribe_push);
-    } else {
-      SuprsendRnSdk.reset();
-    }
+    SuprsendRnSdk.reset(unsubscribe_push);
   },
 
   purchaseMade: function (properties: Object) {

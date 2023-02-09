@@ -10,8 +10,8 @@ class SuprsendRnSdk:NSObject{
     }
     
     @objc
-    func reset() -> Void {
-        SuprSend.shared.reset();
+    func reset(_ unsubscribeNotification: Bool) -> Void {
+        SuprSend.shared.reset(unsubscribeNotification: unsubscribeNotification);
     }
     
     @objc
