@@ -189,7 +189,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation 'com.suprsend:rn:0.1.10' // Add this line
+    implementation 'com.suprsend:rn:1.0.2' // Add this line
     implementation("com.google.firebase:firebase-messaging:22.0.0") // Add this for FCM Android Push
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
