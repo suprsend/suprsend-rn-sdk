@@ -350,7 +350,7 @@ PODS:
     - React-jsi (= 0.71.4)
     - React-logger (= 0.71.4)
     - React-perflogger (= 0.71.4)
-  - suprsend-rn-sdk (2.2.0):
+  - suprsend-rn-sdk (2.3.0):
     - React-Core
     - SuprsendCore (= 1.0.2)
     - SuprSendSdk (= 1.0.2)
@@ -512,7 +512,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: ad17efcfb2fa8f6bfd8ac0cf48d96668b8b28e0b
   React-runtimeexecutor: 8fa50b38df6b992c76537993a2b0553d3b088004
   ReactCommon: 34f9369c376d5f335069dda29552b3e7351b9ec6
-  suprsend-rn-sdk: fa6aeda1ba4d94a6c54c5d52ca7a7cbb8432b8dd
+  suprsend-rn-sdk: d054137b0fb2e55644da50f9d12873047aa5f623
   SuprsendCore: 5aa6f17e71d805c001fdbfd54c81fbc5220b4657
   SuprSendSdk: fc03ccf62df0902304f94444fe8a24e70a779de8
   Yoga: 79dd7410de6f8ad73a77c868d3d368843f0c93e0
