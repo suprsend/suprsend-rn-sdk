@@ -31,7 +31,7 @@
     "prepare": "bob build",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods",
+    "bootstrap": "yarn",
     "publish_sdk": "yarn prepare && npm publish"
   },
   "keywords": [
