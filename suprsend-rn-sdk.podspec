@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
 
   s.dependency "React-Core"
   s.dependency "SuprsendCore", "1.0.2"
-  s.dependency "SuprSendSdk", "1.0.2"
+  s.dependency "SuprSendSdk", "1.0.3"
 end
