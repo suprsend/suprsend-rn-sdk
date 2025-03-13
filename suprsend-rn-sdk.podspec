@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency "SuprsendCore", "1.0.2"
-  s.dependency "SuprSendSdk", "1.0.3"
+  s.dependency "SuprsendCore", "1.0.7"
+  s.dependency "SuprSendSdk", "1.0.4"
 end
