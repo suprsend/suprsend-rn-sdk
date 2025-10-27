@@ -3,7 +3,6 @@ buildscript {
         repositories {
             google()
             mavenCentral()
-            jcenter()
             maven { url "https://jitpack.io" }
         }
 
@@ -20,7 +19,7 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('SuprsendRnSdk_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('SuprsendRnSdk_compileSdkVersion', 30)
     defaultConfig {
         minSdkVersion safeExtGet('SuprsendRnSdk_minSdkVersion', 19)
         targetSdkVersion safeExtGet('SuprsendRnSdk_targetSdkVersion', 29)
@@ -52,7 +51,6 @@ repositories {
     maven { url "https://jitpack.io" }
     google()
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
