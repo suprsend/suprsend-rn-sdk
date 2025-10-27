@@ -1,6 +1,6 @@
 {
   "name": "@suprsend/react-native-sdk",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Suprsend SDK for React Native Applications",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
